@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import cors from "cors";
+import { Grid } from "@material-ui/core";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import BasicTable from "./component/table/basic-table";
+import PersonList from "./member-list";
+class App extends Component {
+  render() {
+    return (
+      <Grid
+        container
+        direction="row"
+        justify="center"
+        alignItems="center"
+        spacing={10}
+      >
+        <Grid container item sm={12} md={12} lg={10}>
+          {/* <BasicTable /> */}
+          <PersonList />
+        </Grid>
+      </Grid>
+    );
+  }
 }
 
 export default App;
